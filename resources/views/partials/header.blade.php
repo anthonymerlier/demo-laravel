@@ -1,7 +1,27 @@
-<nav>
-    <ul>
-        <li><a href="{{ route('homepage') }}">Home</a></li>
-        <li><a href="{{ route('aboutpage') }}">About us</a></li>
-        <li><a href="{{ route('contactpage') }}">Contact</a></li>
-    </ul>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('homepage') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('aboutpage') }}">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('bookspage') }}">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('authorspage') }}">Authors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('contactpage') }}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

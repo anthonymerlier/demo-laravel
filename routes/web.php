@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,11 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [ HomeController::class, 'home' ])->name('homepage');
-
 Route::get('/about/index', [ HomeController::class, "about" ])->name('aboutpage');
-
 Route::get('/contactez-nous', [ HomeController::class, 'contact' ])->name('contactpage');
+
+Route::get("/books", [ BookController::class, "allBooks" ])->name('bookspage');
+Route::get("/book/{id}", [ BookController::class, "displayOne" ])->name('bookpage');
+
+Route::get("/authors", [ AuthorController::class, "allAuthors" ])->name('authorspage');
+Route::get("/author/{id}", [ AuthorController::class, "displayOne" ])->name('authorpage');
