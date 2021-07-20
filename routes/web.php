@@ -19,6 +19,7 @@ use App\Http\Controllers\AuthorController;
 Route::get('/', [ HomeController::class, 'home' ])->name('homepage');
 Route::get('/about/index', [ HomeController::class, "about" ])->name('aboutpage');
 Route::get('/contactez-nous', [ HomeController::class, 'contact' ])->name('contactpage');
+Route::post('/contactez-nous', [ HomeController::class, 'contactSend' ])->name('contactsendpage');
 
 Route::get("/books", [ BookController::class, "allBooks" ])->name('bookspage');
 Route::get("/book/{id}", [ BookController::class, "displayOne" ])->name('bookpage');
