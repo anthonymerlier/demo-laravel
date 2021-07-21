@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\AuthorController;
 
 /*
@@ -26,3 +27,5 @@ Route::get("/book/{id}", [ BookController::class, "displayOne" ])->name('bookpag
 
 Route::get("/authors", [ AuthorController::class, "allAuthors" ])->name('authorspage');
 Route::get("/author/{id}", [ AuthorController::class, "displayOne" ])->name('authorpage');
+
+Route::get("/sendContactMail", [ MailController::class, "contactMailSend"])->name("sendcontactmail");

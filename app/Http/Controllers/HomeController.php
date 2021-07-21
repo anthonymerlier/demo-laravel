@@ -38,7 +38,7 @@ class HomeController extends Controller
 
         $message->save();
         
-        return redirect()->route('homepage');
+        return redirect()->route('sendcontactmail');
     }
 
 }
