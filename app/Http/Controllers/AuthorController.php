@@ -20,4 +20,20 @@ class AuthorController extends Controller
         $author->livres = $author->books()->get();
         return view('authors.author', compact('author'));
     }
+
+    public function create(){
+        return view('authors.create');
+    }
+
+    public function store(Request $request){
+        $auteur = new Author();
+
+        $auteur->nom = $request->nom;
+        $auteur->prenom = $request->prenom;
+
+        $auteur->save();
+
+        return "Auteur ajouté";
+
+    }
 }

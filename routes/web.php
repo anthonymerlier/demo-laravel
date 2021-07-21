@@ -23,9 +23,13 @@ Route::get('/contactez-nous', [ HomeController::class, 'contact' ])->name('conta
 Route::post('/contactez-nous', [ HomeController::class, 'contactSend' ])->name('contactsendpage');
 
 Route::get("/books", [ BookController::class, "allBooks" ])->name('bookspage');
-Route::get("/book/{id}", [ BookController::class, "displayOne" ])->name('bookpage');
+Route::get("/book/create", [ BookController::class, "create" ])->name('bookcreateform');
+Route::post("/book/create", [ BookController::class, "store" ])->name('bookstore');
+Route::get("/book/{id}", [ BookController::class, "displayOne" ])->name('bookpage'); 
 
 Route::get("/authors", [ AuthorController::class, "allAuthors" ])->name('authorspage');
+Route::get("/author/create", [ AuthorController::class, "create" ])->name('authorcreateform');
+Route::post("/author/create", [ AuthorController::class, "store" ])->name('authorstore');
 Route::get("/author/{id}", [ AuthorController::class, "displayOne" ])->name('authorpage');
 
 Route::get("/sendContactMail", [ MailController::class, "contactMailSend"])->name("sendcontactmail");
