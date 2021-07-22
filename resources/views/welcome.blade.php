@@ -8,8 +8,8 @@
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit eius deleniti commodi rerum minima tempora iusto ipsam, quisquam animi assumenda?</p>
             </div>
             <div class="fw-bold">
-                @foreach($data as $item => $value)
-                    <p>{{ $item }} : {{ $value }}</p>
+                @foreach($books as $book)
+                    <p>{{ $book->nom }}</p>
                 @endforeach
             </div>
         </div>
