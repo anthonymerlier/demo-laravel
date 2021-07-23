@@ -25,7 +25,7 @@ class BookFactory extends Factory
             "nom" => $this->faker->words(5, true),
             "ISBN" => $this->faker->isbn13(),
             "price" => $this->faker->numberBetween(10,20),
-            "author_id" => $this->faker->numberBetween(1,5)
+            "author_id" => $this->faker->numberBetween(1,25)
         ];
     }
 }

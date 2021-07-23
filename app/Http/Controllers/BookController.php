@@ -12,8 +12,8 @@ class BookController extends Controller
     public function allBooks()
     {
         // Demander à Laravel de récupérer tous les objets dans la table Books
-        $books = Book::get();
-        // dd($books);
+        $books = Book::latest()->paginate(10);
+        //dd($books);
         // Retourne note vue avec les books intégrés
         return view('books.books', compact('books'));
     }
