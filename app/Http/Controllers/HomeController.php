@@ -8,12 +8,27 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-
-    public function home()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        // FetchAll d'une requete SQL
-       $books = Book::get();
-        return view('welcome', compact('books') );
+        $this->middleware('auth', [ 
+            "except" => "index", "about", "contact", "contactSend"
+        ]);
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        $books = Book::all();
+        return view('welcome', compact("books"));
     }
 
     public function about()
@@ -26,7 +41,7 @@ class HomeController extends Controller
         return view('contact');
     }
 
-    public function contactSend(Request $request){
+     public function contactSend(Request $request){
         // ICI mon code
         $message = new Message();
 
@@ -38,5 +53,4 @@ class HomeController extends Controller
         
         return redirect()->route('sendcontactmail');
     }
-
 }

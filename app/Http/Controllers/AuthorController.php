@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [ "except" => "allAuthors", "displayOne"]);
+    }
     //
     public function allAuthors(){
         $authors = Author::get();
